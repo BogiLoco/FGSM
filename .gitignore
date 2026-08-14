@@ -1,0 +1,11 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# environment variables
+.env
+
+# OS
+.DS_Store
+fgsm_pl.py
