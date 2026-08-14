@@ -14,7 +14,8 @@ perturbation make a confident classifier confidently wrong.
 - [Setup](#setup)
 - [Usage](#usage)
 - [Using your own image](#using-your-own-image)
-- [Note](#note)
+- [Disclaimer](#disclaimer)
+- [License](#license)
 
 ---
 
@@ -86,8 +87,19 @@ for what each index means).
 
 ---
 
-## Note
+## Disclaimer
 
-This attacks a local model instance you control, on images you provide — it's an
-educational/research tool for understanding adversarial robustness, not something
-aimed at a live third-party system.
+This project is provided for **educational and research purposes only** — to help
+understand how adversarial perturbations work and how to reason about model
+robustness.
+
+- Only run it against models and data you own, or are explicitly authorized to test.
+- Do not use this code, or perturbations produced with it, against third-party
+  systems, production services, or models you do not control, without explicit
+  permission.
+- The software is provided **"as is"**, without warranty of any kind — see
+  [License](#license). You are solely responsible for how you use it.
+
+## License
+
+[MIT](./LICENSE) — see the [`LICENSE`](./LICENSE) file for the full text.
