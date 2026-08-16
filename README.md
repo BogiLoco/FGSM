@@ -1,6 +1,6 @@
-# FGSM — Fast Gradient Sign Method Playground
+# FGSM: Fast Gradient Sign Method Playground
 
-A local playground for the **Fast Gradient Sign Method (FGSM)** — a white-box
+A local playground for the **Fast Gradient Sign Method (FGSM)**, a white-box
 adversarial attack against image classifiers, demonstrated here against a pretrained
 ResNet18 (ImageNet). Point it at an image, watch a tiny, human-invisible pixel
 perturbation make a confident classifier confidently wrong.
@@ -28,7 +28,7 @@ perturbation make a confident classifier confidently wrong.
 | **Visualization** | Side-by-side original / perturbation / attacked image via `matplotlib`. |
 | **Epsilon sweep** | Runs the attack across a range of perturbation budgets to show at which point it starts succeeding. |
 
-No training required — the model is a ready, pretrained `resnet18` from
+No training required: the model is a ready, pretrained `resnet18` from
 `torchvision`, so the script attacks a real, already-strong classifier out of the box.
 
 ---
@@ -37,10 +37,10 @@ No training required — the model is a ready, pretrained `resnet18` from
 
 | | |
 |---|---|
-| **Network** | `resnet18` from `torchvision.models`, loaded with `ResNet18_Weights.IMAGENET1K_V1` — pretrained on ImageNet-1K (1000 classes, ~1.28M training images). No local training happens; weights download automatically on first run and are cached under `~/.cache/torch/hub/checkpoints/`. |
+| **Network** | `resnet18` from `torchvision.models`, loaded with `ResNet18_Weights.IMAGENET1K_V1`, pretrained on ImageNet-1K (1000 classes, ~1.28M training images). No local training happens; weights download automatically on first run and are cached under `~/.cache/torch/hub/checkpoints/`. |
 | **Class labels** | Human-readable ImageNet class names (e.g. `"golden retriever"` instead of index `207`), fetched at runtime from [`pytorch/hub/imagenet_classes.txt`](https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt). |
-| **Input images** | Not bundled — `load_image()` accepts a local file path *or* an image URL. The example uses a sample dog photo from the [pytorch/hub repo](https://raw.githubusercontent.com/pytorch/hub/master/images/dog.jpg). Any RGB image works. |
-| **Full dataset (optional)** | If you want to test against many images systematically rather than one at a time, the full ImageNet dataset is available at [image-net.org](https://image-net.org) (registration required) — not needed to run these scripts. |
+| **Input images** | Not bundled: `load_image()` accepts a local file path *or* an image URL. The example uses a sample dog photo from the [pytorch/hub repo](https://raw.githubusercontent.com/pytorch/hub/master/images/dog.jpg). Any RGB image works. |
+| **Full dataset (optional)** | If you want to test against many images systematically rather than one at a time, the full ImageNet dataset is available at [image-net.org](https://image-net.org) (registration required), not needed to run these scripts. |
 
 ---
 
@@ -68,7 +68,7 @@ Runs the example in `if __name__ == "__main__":`:
 
 ## Using your own image
 
-There's no CLI flag (yet) — swap the image by editing one line near the bottom of
+There's no CLI flag yet. Swap the image by editing one line near the bottom of
 the script:
 
 ```python
@@ -81,15 +81,16 @@ Replace it with either:
 - a **different URL**: any direct link to a `.jpg`/`.png`
 
 `load_image()` handles both transparently. To target a different class in the
-targeted attack, change `TARGET_CLASS_IDX` a few lines below (any index 0–999 —
-see the [class label list](https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt)
-for what each index means).
+targeted attack, change `TARGET_CLASS_IDX` a few lines below. It's a plain
+numeric index (0-999), hardcoded to `859` ("toaster") by default; see the
+[class label list](https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt)
+for what each index means.
 
 ---
 
 ## Disclaimer
 
-This project is provided for **educational and research purposes only** — to help
+This project is provided for **educational and research purposes only**, to help
 understand how adversarial perturbations work and how to reason about model
 robustness.
 
@@ -97,9 +98,9 @@ robustness.
 - Do not use this code, or perturbations produced with it, against third-party
   systems, production services, or models you do not control, without explicit
   permission.
-- The software is provided **"as is"**, without warranty of any kind — see
+- The software is provided **"as is"**, without warranty of any kind: see
   [License](#license). You are solely responsible for how you use it.
 
 ## License
 
-[MIT](./LICENSE) — see the [`LICENSE`](./LICENSE) file for the full text.
+[MIT](./LICENSE). See the [`LICENSE`](./LICENSE) file for the full text.
