@@ -13,6 +13,7 @@ model right away.
 
 Requirements:
     pip install torch torchvision matplotlib pillow requests
+    
 """
 
 import torch
